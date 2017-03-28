@@ -5,7 +5,8 @@ environment:
     matrix:
         - TOXENV: py27
         - TOXENV: py36
-
+init:
+- ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/install-git-2.12.2.ps1'))
 install:
     - "SET PATH=C:\\Python36;C:\\Python36\\Scripts;%PATH%"
     - pip install tox virtualenv --upgrade
